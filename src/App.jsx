@@ -1,7 +1,17 @@
+import { Routes, Route } from "react-router-dom";
+import { Header, Footer } from "./components";
+
+import { Home, PropertyDetails } from "./pages";
+
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="max-w-[1200px] mx-auto bg-white">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/property/:id" element={<PropertyDetails />} />
+      </Routes>
+      <Footer />
     </div>
   );
 };
